@@ -41,7 +41,7 @@ const Post = ({ post }) => {
         alt="img-post"
       />
       {editToggle ? (
-        <form onSubmit={ (e) => handleEdit() }>
+        <form onSubmit={ (e) => handleEdit(e) }>
           <textarea defaultValue={ post.content } onChange={ (e) => setEditContent(e.target.value) }></textarea>
           <input type="submit" value="Save" />
         </form>
