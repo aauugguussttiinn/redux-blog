@@ -23,17 +23,10 @@
     },
     {
       "title": "Article",
-      "author": "user42",
       "content": "Voilà again it is working",
-      "likes": 0,
-      "id": "u5Of86Q"
-    },
-    {
-      "title": "Article 2",
-      "content": "Voici",
       "author": "user42",
-      "likes": 0,
-      "id": "gd8WQWh"
+      "likes": 2,
+      "id": "u5Of86Q"
     }
   ],
   "users": [
