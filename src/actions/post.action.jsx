@@ -2,6 +2,7 @@ import axios from 'axios';
 
 export const GET_POSTS = "GET_POSTS";
 export const ADD_POST = "ADD_POST";
+export const EDIT_POST = "EDIT_POST";
 
 export const getPosts = () => {
   return (dispatch) => {
@@ -23,3 +24,13 @@ export const addPost = (data) => {
       .catch((err) => console.log(err));
   };
 };
+
+// export const editPost = () => {
+//   return (dispatch) => {
+//     return axios.get('http://localhost:3000/posts?_sort=id&_order=desc')
+//     .then((res) => {
+//       dispatch({ type: GET_POSTS, payload: res.data })
+//     })
+//     .catch((err) => console.log(err))
+//   }
+// }
