@@ -31,3 +31,4 @@ export default App;
 // un script dans package.json 'npm run server'
 
 // A ajouter pour du redux
+// isEmpty est une fonction pour gérer l'asynchrone
