@@ -27,8 +27,7 @@ const App = () => {
 export default App;
 
 // npm i -s react-redux redux redux-thunk redux-devtools-extension
-// json-server --w db.json --> Ca lance le serveur mais on aurait aussi pur créer
-// un script dans package.json 'npm run server'
+// json-server --w db.json --> This launches a server but we also could have created
+// a script in package.json 'npm run server'
 
-// A ajouter pour du redux
-// isEmpty est une fonction pour gérer l'asynchrone
+// isEmpty is a function specially designed to handle async issues
