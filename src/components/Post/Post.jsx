@@ -3,12 +3,13 @@ import Like from "components/Like/Like";
 import { useDispatch, useSelector } from "react-redux";
 import { isEmpty } from "components/Utils/Utils";
 import { useState } from "react";
+import { editPost } from "actions/post.action";
 
 const Post = ({ post }) => {
 
   const [editToggle, setEditToggle] = useState(false);
-  const [editContent, setEditContent] = useState(post.content); 
-  const user = useSelector ((state) => state.userReducer);
+  const [editContent, setEditContent] = useState(post.content);
+  const user = useSelector((state) => state.userReducer);
   const dispatch = useDispatch();
 
   const handleEdit = (e) => {

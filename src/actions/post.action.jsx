@@ -25,12 +25,17 @@ export const addPost = (data) => {
   };
 };
 
-// export const editPost = () => {
-//   return (dispatch) => {
-//     return axios.get('http://localhost:3000/posts?_sort=id&_order=desc')
-//     .then((res) => {
-//       dispatch({ type: GET_POSTS, payload: res.data })
-//     })
-//     .catch((err) => console.log(err))
-//   }
-// }
+export const editPost = (data) => {
+  return (dispatch) => {
+    return axios ({
+      method: "put",
+      url: `http://localhost:3000/posts/${data.id}`,
+      data: { ...data },
+      /// above is a 'spread operator'. It breaks the table to get single every element 1:28
+    })
+      .then((res) => {
+        dispatch({ type: EDIT_POST, payload: {...data } });
+      })
+      .catch((err) => console.log(err));
+  };
+};
