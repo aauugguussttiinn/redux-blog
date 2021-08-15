@@ -4,7 +4,7 @@ export const GET_POSTS = "GET_POSTS";
 
 export const getPosts = () => {
   return (dispatch) => {
-    return axios.get('https://localhost:3001/posts?_sort=id&_order=desc')
+    return axios.get('http://localhost:3000/posts?_sort=id&_order=desc')
     .then((res) => {
       dispatch({ type: GET_POSTS, payload: res.data })
     })
