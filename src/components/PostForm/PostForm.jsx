@@ -1,3 +1,4 @@
+import { getPosts } from "actions/post.action";
 import { addPost } from "actions/post.action";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,7 +11,7 @@ const PostForm = () => {
   const user = useSelector((state) => state.userReducer);
   const dispatch = useDispatch();
 
-  const handleForm = (e) => {
+  const handleForm = async (e) => {
     e.preventDefault();
 
     if (title && content) {
@@ -21,7 +22,14 @@ const PostForm = () => {
         likes: 0,
       };
 
-      dispatch(addPost(data));
+      await dispatch(addPost(data));
+      // the 3 following lines will be executed only after the above dispatch
+      // thanks to the await (optional)
+      setTitle('');
+      setContent('');
+      dispatch(getPosts());
+      // we have to dispatch again because the id of the article is set by the db in backend so
+      // we have to update the store by getting its value after creation
     }
   }
   
